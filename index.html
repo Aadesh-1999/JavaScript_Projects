@@ -12,14 +12,14 @@
 </head>
 
 <body>
-    <div class="container border my-2 py-2">
+    <div class="container border  my-2 pt-3">
         <div class="d-flex justify-content-center text-warning">
             <h3>Digital Watch</h3>
         </div>
         <div id="clock">
         </div>
     </div>
-    <div class="container border my-5 pt-5">
+    <div class="container border my-2 pt-3">
         <div class="d-flex justify-content-center text-warning">
             <h3>Stopwatch</h3>
         </div>
@@ -32,9 +32,33 @@
             <button id="resetStopWatch" class="btn-danger m-1 p-2">reset</button>
         </div>
     </div>
-    <div class="container border my-5">
-        <div id="calculator">
-
+    <div class="container border my-2 pt-3">
+        <div class="d-flex justify-content-center text-warning">
+            <h3>Calculator</h3>
+        </div>
+        <div id="calculator" class="mt-2 d-flex justify-content-center align-items-center text-warning row">
+            <div class="input col-12 d-flex justify-content-center">
+                <input type="text" name="numInput" id="numInput" style="text-align: right;">
+            </div>
+            <div class="numbers col-12 row d-flex justify-content-center align-items-center my-2 p-2">
+                <h4 id="numBtn1" class="col-2 bg-primary m-1 btn text-white">1</h4>
+                <h4 id="numBtn2" class="col-2 bg-primary m-1 btn text-white">2</h4>
+                <h4 id="numBtn3" class="col-2 bg-primary m-1 btn text-white">3</h4>
+                <h4 id="numBtn4" class="col-2 bg-primary m-1 btn text-white">4</h4>
+                <h4 id="numBtn5" class="col-2 bg-primary m-1 btn text-white">5</h4>
+                <h4 id="numBtn6" class="col-2 bg-primary m-1 btn text-white">6</h4>
+                <h4 id="numBtn7" class="col-2 bg-primary m-1 btn text-white">7</h4>
+                <h4 id="numBtn8" class="col-2 bg-primary m-1 btn text-white">8</h4>
+                <h4 id="numBtn9" class="col-2 bg-primary m-1 btn text-white">9</h4>
+                <h4 id="numBtn0" class="col-2 bg-primary m-1 btn text-white">0</h4>
+                <h4 id="btnAdd" class="col-2 bg-secondary m-1 btn text-white">+</h4>
+                <h4 id="btnSub" class="col-2 bg-secondary m-1 btn text-white">-</h4>
+                <h4 id="btnDivide" class="col-2 bg-secondary m-1 btn text-white">/</h4>
+                <h4 id="btnMultiply" class="col-2 bg-secondary m-1 btn text-white">*</h4>
+                <h4 id="btnEqual" class="col-2 bg-success m-1 btn text-white">=</h4>
+                <h4 id="btnDel" class="col-2 bg-danger m-1 btn text-white">Del</h4>
+                <h4 id="btnClr" class="bg-danger col-2 m-1 btn text-white">Clr</h4>
+            </div>
         </div>
     </div>
     <div class="container border my-5"></div>
