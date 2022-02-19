@@ -1,7 +1,5 @@
 //clock js
 let clock = document.getElementById("clock");
-
-
 function getDayofWeek(dateString) {
     let day = (new Date(dateString)).getDay();
     return isNaN(day) ? null : ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'][day];
@@ -23,9 +21,7 @@ function displayClock() {
     let amPm = "AM";
 
     if (hour >= 12) { hour = hour - 12; }
-    // 
     if (hour < 10) { hour = '0' + hour; }
-    
     if (hour >= 12)
         amPm = "PM";
     if (hour == 0 && amPm == "AM") { hour = 12;}
@@ -35,9 +31,9 @@ function displayClock() {
     if (milliSec >= 10 && milliSec < 100) { milliSec = '0' + milliSec }
     let timeDiplay = hour + ' : ' + mins + ' : ' + sec + ' : ' + milliSec + ' ' + amPm;
     clock.innerHTML = `<div class="m-5 p-1 bg-info">
-<h6 class='d-flex justify-content-center'>${dateDisplay}</h6>
-<h6 class='d-flex justify-content-center'>${dayDisplay}</h6>
-<h6 class='d-flex justify-content-center'>${timeDiplay}</h6>
+<h5 class='d-flex justify-content-center'>${dateDisplay}</h5>
+<h5 class='d-flex justify-content-center'>${dayDisplay}</h5>
+<h5 class='d-flex justify-content-center'>${timeDiplay}</h5>
 </div>`;
 }
 
@@ -106,11 +102,10 @@ function resetStopWatch() {
         isStarted = false;
         isPaused = true;
         stopWatchTimer.innerHTML = `00 : 00 : 00`;
-        alert("Reset Done! Start Again..");
+        console.log("Reset Done! Start Again..");
     }
     else { alert("Already Reseted.. Try Start!"); }
 }
-//setInterval(stopWatchTimer, 1);
 
 
 
