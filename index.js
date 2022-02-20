@@ -187,16 +187,71 @@ numBtns.map((numBtn) => addNumEvent(numBtn));
 //TicTacToe
 let tictactoe = document.getElementById("tictactoe");
 let tictactoeKeys=Array.from(tictactoe.children);
-
+let resetTictactoeBtn=document.getElementById("resetTictactoe");
+let tictactoeResult=document.getElementById("tictactoeResult");
 let isX=true;
+
+
+function resetTictactoe(){
+    tictactoeKeys.map((key)=>{key.innerText="-";});
+    //tictactoeResult.innerText="Start Playing..";
+    isX ? console.log('Current key : X') : console.log('Current key : O');
+    console.log("Matrix resetted");
+}
+
+resetTictactoeBtn.addEventListener('click',function(){
+    resetTictactoe();
+});
 
 function checkIfWon(){
     let tictactoeKeysFinal=tictactoeKeys.map((key)=>{
         return key.innerText;
+        resetTictactoe();
     });
+
     if(tictactoeKeysFinal[0]!='-'&&(tictactoeKeysFinal[0]==tictactoeKeysFinal[1] && tictactoeKeysFinal[1]==tictactoeKeysFinal[2]))
     {
-        console.log("Someone has won");
+        tictactoeResult.innerText=tictactoeKeysFinal[0]+" has won";
+        resetTictactoe();
+    }
+    else if(tictactoeKeysFinal[3]!='-'&&(tictactoeKeysFinal[3]==tictactoeKeysFinal[4] && tictactoeKeysFinal[4]==tictactoeKeysFinal[5]))
+    {
+        tictactoeResult.innerText=tictactoeKeysFinal[3]+" has won";
+        resetTictactoe();
+    }
+    else if(tictactoeKeysFinal[6]!='-'&&(tictactoeKeysFinal[6]==tictactoeKeysFinal[7] && tictactoeKeysFinal[7]==tictactoeKeysFinal[8]))
+    {
+        tictactoeResult.innerText=tictactoeKeysFinal[6]+" has won";
+        resetTictactoe();
+    }
+    else if(tictactoeKeysFinal[0]!='-'&&(tictactoeKeysFinal[0]==tictactoeKeysFinal[4] && tictactoeKeysFinal[4]==tictactoeKeysFinal[8]))
+    {
+        tictactoeResult.innerText=tictactoeKeysFinal[0]+" has won";
+        resetTictactoe();
+    }
+    else if(tictactoeKeysFinal[2]!='-'&&(tictactoeKeysFinal[2]==tictactoeKeysFinal[4] && tictactoeKeysFinal[4]==tictactoeKeysFinal[6]))
+    {
+        tictactoeResult.innerText=tictactoeKeysFinal[2]+" has won";
+        resetTictactoe();
+    }
+    else if(tictactoeKeysFinal[0]!='-'&&(tictactoeKeysFinal[0]==tictactoeKeysFinal[3] && tictactoeKeysFinal[3]==tictactoeKeysFinal[6]))
+    {
+        tictactoeResult.innerText=tictactoeKeysFinal[0]+" has won";
+        resetTictactoe();
+    }
+    else if(tictactoeKeysFinal[1]!='-'&&(tictactoeKeysFinal[1]==tictactoeKeysFinal[4] && tictactoeKeysFinal[4]==tictactoeKeysFinal[7]))
+    {
+        tictactoeResult.innerText=tictactoeKeysFinal[1]+" has won";
+        resetTictactoe();
+    }
+    else if(tictactoeKeysFinal[2]!='-'&&(tictactoeKeysFinal[2]==tictactoeKeysFinal[5] && tictactoeKeysFinal[5]==tictactoeKeysFinal[8]))
+    {
+        tictactoeResult.innerText=tictactoeKeysFinal[2]+" has won";
+        resetTictactoe();
+    }
+    //else if(tictactoeKeysFinal.forEach((val)=>{if(val=="-"){return false;}}))
+    else{
+        tictactoeResult.innerText="Draw";
     }
     console.log(tictactoeKeysFinal);
 }
