@@ -181,3 +181,47 @@ function addNumEvent(numBtn) {
 }
 
 numBtns.map((numBtn) => addNumEvent(numBtn));
+
+
+
+//TicTacToe
+let tictactoe = document.getElementById("tictactoe");
+let tictactoeKeys=Array.from(tictactoe.children);
+
+let isX=true;
+
+function checkIfWon(){
+    let tictactoeKeysFinal=tictactoeKeys.map((key)=>{
+        return key.innerText;
+    });
+    if(tictactoeKeysFinal[0]!='-'&&(tictactoeKeysFinal[0]==tictactoeKeysFinal[1] && tictactoeKeysFinal[1]==tictactoeKeysFinal[2]))
+    {
+        console.log("Someone has won");
+    }
+    console.log(tictactoeKeysFinal);
+}
+
+function addEventToKey(key)
+{
+    key.addEventListener('click',()=>{
+        if(key.innerText=='-')
+        {
+            if(isX)
+            {
+                key.innerText='X';
+                isX=false;
+            }
+            else
+            {
+                key.innerText='O';
+                isX=true;
+            }
+        }
+        else{
+            console.log("Already selected");
+        }
+        checkIfWon();
+    });
+}
+
+tictactoeKeys.map((key)=>{addEventToKey(key)});
